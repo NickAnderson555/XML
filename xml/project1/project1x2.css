@@ -1,0 +1,25 @@
+* {display:block; font:arial; color:blue;}
+exchange {vertical-align:text-top; margin-bottom:1ex; border:2px navy outset; width:250px; margin-bottom:2em; float:left; margin-right:2em;}
+name *{display:inline; font-variant:small-caps;}
+name {text-align:center; font-weight:bold; border-bottom:2px navy outset;}
+address {background-color:lightblue;}
+address street {padding-top:.5em;}
+address city, state, zip {display:inline;}
+telephone {padding-top:1em;}
+email {padding:1ex 0ex 1ex 0ex;}
+month, day, year {font-style:italic; display:inline;}
+school {color:#2DC100; padding-top:1ex; border-top:2px #2DC100 dotted;}
+nameMother {border-top:2px pink dotted; padding-top:1ex;}
+nameFather {border-top:2px blue dotted; padding-top:1ex;}
+nameMother * {display:inline; color:pink;}
+nameFather * {display:inline; color:blue;}
+schoolAddress * {color:#2DC100; padding-top:.5ex;}
+telephoneEmergency {color:red; padding:1ex 0ex 1ex 0ex;}
+languages * {color:#006DD3;}
+countryChoices * {color:#AA0300;}
+countryChoices *[preference="1"] {color:#77AA00;}
+feePaid {color:black;}
+feePaid[currency="USD"] {color:green;}
+feePaid[currency="EUR"] {color:blue;}
+feePaid[currency="YEN"] {color:red;}
+feePaid[currency="PSO"] {color:lightblue;}

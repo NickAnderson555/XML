@@ -1,0 +1,13 @@
+* {display:block; font-family:"Times New Roman",Times,Serif; color:black;}
+school {color:black; padding-top:1ex; border-top:2px #2DC100 dotted;}
+nameMother * {display:inline; color:black;}
+nameFather * {display:inline; color:black;}
+schoolAddress * {color:black; padding-top:.5ex;}
+telephoneEmergency {color:black; padding:1ex 0ex 1ex 0ex;}
+languages * {color:black;}
+countryChoices * {color:black;}
+countryChoices *[preference="1"] {color:black;}
+feePaid[currency="dollar"] {color:black;}
+feePaid[currency="euro"] {color:black;}
+feePaid[currency="yen"] {color:black;}
+feePaid[currency="peso"] {color:black;}

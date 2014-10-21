@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<xs:element name="exchanges">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="exchange" type="contents" minOccurs="4" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="contents">
+		<xs:group ref="exElements" />
+		<xs:attributeGroup ref="exchangeAtt" />
+	</xs:complexType>
+	
+	<xs:group name="exElements">
+		<xs:sequence>
+			<xs:element name="name" type="nameType"/>
+			<xs:element name="address" type="addressType"/>
+			<xs:element name="telephone" type="telephoneType"/>
+			<xs:element name="email" type="xs:string"/>
+			<xs:element name="appDate" type="dateType"/>
+			<xs:element name="availDate" type="dateType"/>
+			<xs:element name="birthCountry" type="alpha"/>
+			<xs:element name="dob" type="dateType" minOccurs="0"/>
+			<xs:element name="age" type="ageType" minOccurs="0"/>
+			<xs:element name="gender" type="genderType"/>
+			<xs:element name="school" type="alpha"/>
+			<xs:element name="schoolAddress" type="addressType"/>
+			<xs:element name="yearInSchool" type="xs:string" minOccurs="0"/>
+			<xs:element name="nameMother" type="nameType" minOccurs="0"/>
+			<xs:element name="nameFather" type="nameType" minOccurs="0"/>
+			<xs:element name="telephoneEmergency" type="telephoneType"/>
+			<xs:element name="feePaid" type="feeType"/>
+			<xs:element name="essay" type="essayType"/>
+			<xs:element name="languages" type="languagesType"/>
+			<xs:element name="countryChoices" type="choicesType"/>
+		</xs:sequence>
+	</xs:group>
+	
+	<xs:attributeGroup name="exchangeAtt">
+		<xs:attribute name="role" type="sOrT" use="required"/>
+		<xs:attribute name="exID" type="xs:ID" use="required"/>
+	</xs:attributeGroup>
+	
+	<xs:simpleType name="sOrT">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S"/>
+			<xs:enumeration value="T"/>
+		</xs:restriction>
+	</xs:simpleType>	
+		
+	<xs:complexType name="nameType">
+		<xs:sequence>
+			<xs:element name="lastName" type="alpha"/>
+			<xs:element name="firstName" type="alpha"/>
+			<xs:element name="initial" type="alpha" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="alpha">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z\s]*"/>	
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="addressType">
+		<xs:sequence>
+			<xs:element name="street" type="xs:string"/>
+			<xs:element name="apartment" type="xs:string" minOccurs="0"/>
+			<xs:element name="city" type="xs:string"/>
+				<xs:choice>
+					<xs:element name="state" type="alpha"/>
+					<xs:element name="province" type="alpha"/>				
+				</xs:choice>
+				<xs:choice>
+					<xs:element name="zip" type="zip"/>
+					<xs:element name="postalCode" type="post"/>
+				</xs:choice>
+			<xs:element name="countryA" type="xs:string"/>	
+		</xs:sequence>
+	</xs:complexType>	
+	
+	<xs:simpleType name="zip">
+		<xs:restriction base="xs:integer">
+			<xs:minExclusive value="5"/>	
+			<xs:pattern value="[0-9]{5}\+{0,1}[0-9]{0,4}"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="post">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[\d\D]{0,12}"/>	
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="telephoneType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}"/>	
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:complexType name="dateType">
+		<xs:sequence>
+			<xs:element name="month" type="monthF"/>
+			<xs:element name="day" type="dayF"/>
+			<xs:element name="year" type="yearF"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="monthF">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="12"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="dayF">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="31"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="yearF">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="[12]*[0-9]{0,3}"/>
+		</xs:restriction>
+	</xs:simpleType>				
+			
+	<xs:simpleType name="ageType">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="13"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="genderType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="M"/>
+			<xs:enumeration value="F"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:complexType name="feeType">
+		<xs:simpleContent>
+			<xs:extension base="xs:decimal">
+				<xs:attribute name="currency" type="currencyType" use="required"/>
+			</xs:extension>					
+		</xs:simpleContent>	
+	</xs:complexType>		
+	
+	<xs:simpleType name="currencyType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="USD"/>
+			<xs:enumeration value="EUR"/>
+			<xs:enumeration value="BZD"/>
+			<xs:enumeration value="BHD"/>
+			<xs:enumeration value="KGS"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:simpleType name="essayType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	
+	<xs:complexType name="languagesType">
+		<xs:sequence>
+			<xs:element name="language" minOccurs="2" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="fluency" type="fluencyType" use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>			
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="fluencyType">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="choicesType">
+		<xs:sequence>
+			<xs:element name="country" minOccurs="5"  maxOccurs="5">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="alpha">
+							<xs:attribute name="preference" type="preferenceType" use="required"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="preferenceType">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+		</xs:restriction>
+	</xs:simpleType>	
+			
+</xs:schema>

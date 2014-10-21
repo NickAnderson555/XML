@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="project2.xsl" ?>
+	
+<!-- 
+	Author: Brett Green
+	Project: Project 2
+	File References: project2.xsl, project2.css
+-->
+<!DOCTYPE exchanges [
+<!ELEMENT exchanges (exchange*)>
+<!ELEMENT exchange (name, address, telephone, email, appDate, availDate, birthCountry, dob?, age?, gender, school, schoolAddress, yearInSchool?, nameMother?, nameFather?, telephoneEmergency, feePaid, essay, languages, countryChoices)>
+<!ATTLIST exchange role (S|T) #REQUIRED
+		  		   exID	 ID	  #REQUIRED>
+<!ELEMENT name (lastName, firstName, initial?)>
+<!ELEMENT lastName (#PCDATA)>
+<!ELEMENT firstName (#PCDATA)>
+<!ELEMENT initial (#PCDATA)>
+<!ELEMENT address (street, apartment?, city, (state | province), (zip | postalCode), countryA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT apartment (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT province (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+<!ELEMENT postalCode (#PCDATA)>
+<!ELEMENT countryA (#PCDATA)>
+<!ELEMENT telephone (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT appDate (month, day, year)>
+<!ELEMENT month (#PCDATA)>
+<!ELEMENT day (#PCDATA)>
+<!ELEMENT year (#PCDATA)>
+<!ELEMENT availDate (month, day, year)>
+<!ELEMENT birthCountry (#PCDATA)>
+<!ELEMENT dob (month, day, year)>
+<!ELEMENT age (#PCDATA)>
+<!ELEMENT gender (#PCDATA)>
+<!ELEMENT school (#PCDATA)>
+<!ELEMENT schoolAddress (street, apartment?, city, (state | province), (zip | postalCode), countryA)>
+<!ELEMENT yearInSchool (#PCDATA)>
+<!ELEMENT nameMother (lastName, firstName, initial?)>
+<!ELEMENT nameFather (lastName, firstName, initial?)>
+<!ELEMENT telephoneEmergency (#PCDATA)>
+<!ELEMENT feePaid (#PCDATA)>
+<!ATTLIST feePaid currency CDATA #REQUIRED>
+<!ELEMENT essay (#PCDATA)>
+<!ELEMENT languages (language, language, language*)>
+<!ELEMENT language (#PCDATA)>
+<!ATTLIST language fluency (1 | 2 | 3 | 4) #REQUIRED>
+<!ELEMENT countryChoices (country, country, country, country, country)>
+<!ELEMENT country (#PCDATA)>
+<!ATTLIST country preference (1 | 2 | 3 | 4 | 5) #REQUIRED>
+<!ENTITY eng "English">
+<!ENTITY spa "Spanish">
+<!ENTITY jap "Japanese">
+<!ENTITY fre "French">
+<!ENTITY me  "Mexcio">
+<!ENTITY ca "Canada">
+<!ENTITY us "United States">
+<!ENTITY br "Brazil">
+<!ENTITY jp "Japan">
+<!ENTITY it "Italy">
+]>
+
+<exchanges>
+	<exchange role="S" exID="E00001">
+		<name>
+			<lastName>Green</lastName>
+			<firstName>Brett</firstName>
+			<initial>A</initial>
+		</name>
+		<address>
+			<street>1508 Sumac Dr.</street>
+			<apartment></apartment>
+			<city>Madison</city>
+			<state>WI</state>
+			<zip>53705</zip>
+			<countryA>USA</countryA>
+		</address>	
+		<telephone>(608) 692-2737</telephone>
+		<email>brettalangreen@gmail.com</email>
+		<appDate>
+			<month>9</month>
+			<day>18</day>
+			<year>2013</year>
+		</appDate>
+		<availDate>
+			<month>10</month>
+			<day>01</day>
+			<year>2013</year>
+		</availDate>
+		<birthCountry>USA</birthCountry>
+		<dob>
+			<month>9</month>
+			<day>29</day>
+			<year>1979</year>
+		</dob>
+		<age>33</age>
+		<gender>male</gender>
+		<school>MATC</school>
+		<schoolAddress>
+			<street>1701 Wright St.</street>
+			<apartment></apartment>
+			<city>Madison</city>
+			<state>WI</state>
+			<zip>53704</zip>
+			<countryA>USA</countryA>
+		</schoolAddress>
+		<yearInSchool>Senior</yearInSchool>
+		<nameMother>
+			<lastName>Green</lastName>
+			<firstName>Alice</firstName>
+			<initial>H</initial>
+		</nameMother>	
+		<nameFather>
+			<lastName>Green</lastName>
+			<firstName>Bruce</firstName>
+			<initial>M</initial>
+		</nameFather>	
+		<telephoneEmergency>(608) 238-7793</telephoneEmergency>
+		<feePaid currency="USD">3000.00</feePaid>
+		<essay>
+			<![CDATA[ Happy to be here! Lookin' to explore the world a bit, ya know?
+			]]>
+		</essay>
+		<languages>
+			<language fluency="4">&eng;</language>
+			<language fluency="3">&fre;</language>
+		</languages>	
+		<countryChoices>
+			<country preference="1">France</country>
+			<country preference="5">&me;</country>
+			<country preference="2">&it;</country>
+			<country preference="4">&ca;</country>
+			<country preference="3">Germany</country>
+		</countryChoices>
+	</exchange>
+	<exchange role="S" exID="E00002">
+		<name>
+			<lastName>Butterscumscotch-Evola</lastName>
+			<firstName>Pedro</firstName>
+			<initial>J</initial>				
+		</name>
+		<address>
+			<street>1010 Brook Dr.</street>
+			<apartment>A6</apartment>
+			<city>Belize City</city>
+			<state>Belize City</state>
+			<zip>11111</zip>
+			<countryA>Belize</countryA>
+		</address>	
+		<telephone>(608) 222-3333</telephone>
+		<email>pedrob1@madisoncollege.edu</email>
+		<appDate>
+			<month>9</month>
+			<day>01</day>
+			<year>2013</year>
+		</appDate>
+		<availDate>
+			<month>11</month>
+			<day>01</day>
+			<year>2013</year>
+		</availDate>
+		<birthCountry>Belize</birthCountry>
+		<dob>
+			<month>4</month>
+			<day>20</day>
+			<year>1985</year>
+		</dob>
+		<age>28</age>
+		<gender>male</gender>
+		<school>Belize Academy</school>
+		<schoolAddress>
+			<street>9669 Horizontal Ave</street>
+			<apartment></apartment>
+			<city>Belize City</city>
+			<state>Belize City</state>
+			<zip>11111</zip>
+			<countryA>Belize</countryA>
+		</schoolAddress>
+		<yearInSchool>Sophomore</yearInSchool>
+		<nameMother>
+			<lastName>Evola</lastName>
+			<firstName>Julia</firstName>
+			<initial>J</initial>
+		</nameMother>	
+		<nameFather>
+			<lastName>Butterscumscotch</lastName>
+			<firstName>David</firstName>
+			<initial>J</initial>
+		</nameFather>	
+		<telephoneEmergency>(608) 999-9999</telephoneEmergency>
+		<feePaid currency="BZD">2800.00</feePaid>
+		<essay>
+			<![CDATA[ I'm looking to expand my horizons.  I fancy myself a citizen of the world.  This is a great opportunity for me to continue to grow!
+			]]>
+		</essay>
+		<languages>
+			<language fluency="3">&eng;</language>
+			<language fluency="4">&spa;</language>
+			<language fluency="3">Italian</language>
+		</languages>	
+		<countryChoices>
+			<country preference="3">&br;</country>
+			<country preference="5">Guatemala</country>
+			<country preference="2">&me;</country>
+			<country preference="4">El Salvador</country>
+			<country preference="1">&it;</country>
+		</countryChoices>
+	</exchange>
+	<exchange role="T" exID="E00003">
+		<name>
+			<lastName>Gravel</lastName>
+			<firstName>Deborah</firstName>
+			<initial></initial>		
+		</name>
+		<address>
+			<street>2902 Harveston Rd</street>
+			<apartment></apartment>
+			<city>Janesville</city>
+			<state>WI</state>
+			<zip>53545</zip>
+			<countryA>USA</countryA>
+		</address>	
+		<telephone>(608) 833-2233</telephone>
+		<email>chefdebby@yahoo.com</email>
+		<appDate>
+			<month>8</month>
+			<day>31</day>
+			<year>2103</year>
+		</appDate>
+		<availDate>
+			<month>9</month>
+			<day>20</day>
+			<year>2013</year>
+		</availDate>
+		<birthCountry>Canada</birthCountry>
+		<dob>
+			<month></month>
+			<day></day>
+			<year></year>
+		</dob>
+		<age></age>
+		<gender>female</gender>
+		<school>Beloit College</school>
+		<schoolAddress>
+			<street>700 College St.</street>
+			<apartment></apartment>
+			<city>Beloit</city>
+			<state>WI</state>
+			<zip>53511</zip>
+			<countryA>USA</countryA>
+		</schoolAddress>
+		<yearInSchool></yearInSchool>
+		<nameMother>
+			<lastName></lastName>
+			<firstName></firstName>
+			<initial></initial>
+		</nameMother>	
+		<nameFather>
+			<lastName></lastName>
+			<firstName></firstName>
+			<initial></initial>
+		</nameFather>	
+		<telephoneEmergency>(608) 213-4546</telephoneEmergency>
+		<feePaid currency="USD">3000.00</feePaid>
+		<essay>
+			<![CDATA[ I am currently on leave from my position at the college and this affords me a wonderful opportunity to both stay active and see the world during my down time.
+			]]>
+		</essay>
+		<languages>
+			<language fluency="4">&eng;</language>
+			<language fluency="2">&jap;</language>
+			<language fluency="3">&fre;</language>
+		</languages>	
+		<countryChoices>
+			<country preference="5">&it;</country>
+			<country preference="2">&jp;</country>
+			<country preference="3">Senegal</country>
+			<country preference="4">Ivory Coast</country>
+			<country preference="1">France</country>
+		</countryChoices>
+	</exchange>
+	<exchange role="S" exID="E00004">
+		<name>
+			<lastName>Crinkles</lastName>
+			<firstName>Olga</firstName>
+			<initial>CC</initial>
+		</name>
+		<address>
+			<street>1212 Tree Ln.</street>
+			<apartment>B76</apartment>
+			<city>Bratislava</city>
+			<state>Federal District</state>
+			<zip>22222</zip>
+			<countryA>Slovakia</countryA>
+		</address>	
+		<telephone>(608) 622-6487</telephone>
+		<email>chrissiechris@gmail.com</email>
+		<appDate>
+			<month>1</month>
+			<day>01</day>
+			<year>2013</year>
+		</appDate>
+		<availDate>
+			<month>10</month>
+			<day>15</day>
+			<year>2013</year>
+		</availDate>
+		<birthCountry>Slovakia</birthCountry>
+		<dob>
+			<month>5</month>
+			<day>15</day>
+			<year>1990</year>
+		</dob>
+		<age>23</age>
+		<gender>female</gender>
+		<school>Comenius University</school>
+		<schoolAddress>
+			<street>500 Victory Dr</street>
+			<apartment>161 Slovak Hill</apartment>
+			<city>Bratislava</city>
+			<state>Federal District</state>
+			<zip>22222</zip>
+			<countryA>Slovakia</countryA>
+		</schoolAddress>
+		<yearInSchool>Junior</yearInSchool>
+		<nameMother>
+			<lastName>Crinkles</lastName>
+			<firstName>Svetlana</firstName>
+			<initial>H</initial>
+		</nameMother>	
+		<nameFather>
+			<lastName>Crinkles</lastName>
+			<firstName>Charlie</firstName>
+			<initial>I</initial>
+		</nameFather>	
+		<telephoneEmergency>(202) 792-4565</telephoneEmergency>
+		<feePaid currency="EUR">2500.90</feePaid>
+		<essay>
+			<![CDATA[ Lookin' to party hard while abroad.  I'd especially like to meet lots of cool new frienz to hang with and stuff.  Oh yeah, I'm also really interested in other cultures!
+			]]>
+		</essay>
+		<languages>
+			<language fluency="1">&spa;</language>
+			<language fluency="3">&eng;</language>
+			<language fluency="4">Slovak</language>
+		</languages>	
+		<countryChoices>
+			<country preference="4">&me;</country>
+			<country preference="2">Ireland</country>
+			<country preference="3">Spain</country>
+			<country preference="1">England</country>
+			<country preference="5">&it;</country>
+		</countryChoices>
+	</exchange>			
+</exchanges>

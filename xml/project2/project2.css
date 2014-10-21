@@ -1,0 +1,11 @@
+* {font:gothic; color:blue;}
+.title {color:navy; font-size:1.5em; font-weight:bold;}
+td {width:15%; padding: .1em .1em .1em .1em;}
+table{border-collapse:collapse; margin-bottom:2em; border:1px solid black;}
+#first {background-color:black;}
+#first td {color:yellow;}
+.class {font-weight:bold;}
+#second {background-color:navy;}
+#second td {color:rgb(340, 340, 300);}
+.address {background-color:silver;}
+
